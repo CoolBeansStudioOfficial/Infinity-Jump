@@ -18,7 +18,10 @@ public class platform : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        gm.deathHeight = transform.position.y;
-        this.enabled = false;
+        if (gm.player.transform.position.y > transform.position.y)
+        {
+            gm.deathHeight = transform.position.y;
+            this.enabled = false;
+        }
     }
 }
